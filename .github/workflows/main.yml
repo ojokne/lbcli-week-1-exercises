@@ -45,8 +45,8 @@ jobs:
             sleep 1
           done
 
-      - name: Wait for bitcoind to start
-        run: sleep 10
+      - name: Check Bitcoin Node Status
+        run: bitcoin-cli -regtest getblockchaininfo
 
       - name: Run Capstone Exercise
         run: |
