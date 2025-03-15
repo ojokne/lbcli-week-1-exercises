@@ -45,19 +45,6 @@ jobs:
             sleep 1
           done
 
-      - name: Print bitcoind logs before running test.sh
-        run: |
-          echo "=== Bitcoin Configuration ==="
-          bitcoin-cli -regtest getnetworkinfo || echo "⚠️ getnetworkinfo failed"
-          bitcoin-cli -regtest getwalletinfo || echo "⚠️ getwalletinfo failed"
-          bitcoin-cli -regtest getblockchaininfo || echo "⚠️ getblockchaininfo failed"
-          
-          echo "=== Checking running processes ==="
-          ps aux | grep bitcoind || echo "⚠️ bitcoind process not found"
-          
-          echo "=== Bitcoin Logs ==="
-          cat ~/.bitcoin/regtest/debug.log | tail -n 20
-
       - name: Run Capstone Exercise
         run: |
           chmod +x submission/test.sh
