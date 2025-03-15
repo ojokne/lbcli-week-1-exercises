@@ -9,6 +9,7 @@ rpcpassword=password
 rpcport=8332
 rpcallowip=127.0.0.1
 server=1
+rpcbind=127.0.0.1
 EOF
 
 echo $(bitcoin-cli --version)
