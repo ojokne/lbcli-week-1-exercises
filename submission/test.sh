@@ -175,7 +175,7 @@ check_cmd "Getting address info"
 
 # STUDENT TASK: Extract the internal key (the x-only pubkey) from the descriptor
 # WRITE YOUR SOLUTION BELOW:
-INTERNAL_KEY=$(bitcoin-cli -regtest -rpcwallet=btrustwallet getaddressinfo $NEW_TAPROOT_ADDR | jq -r ".desc" | sed 's/tr(\([a-fA-F0-9]\+\))#.*/\1/')
+INTERNAL_KEY=$(bitcoin-cli -regtest -rpcwallet=btrustwallet getaddressinfo $NEW_TAPROOT_ADDR | jq -r ".desc" | sed 's/.*\[[a-fA-F0-9]\{8\}\/[^]]*\]\([a-fA-F0-9]\{64\}\).*/\1/')
 check_cmd "Extracting key from descriptor"
 INTERNAL_KEY=$(trim "$INTERNAL_KEY")
 
