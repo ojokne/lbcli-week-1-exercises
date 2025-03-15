@@ -6,10 +6,7 @@ cat <<EOF > ~/.bitcoin/bitcoin.conf
 regtest=1
 rpcuser=user
 rpcpassword=password
-rpcport=18443
-rpcallowip=127.0.0.1
-server=1
-rpcbind=127.0.0.1
+rpcport=18332
 EOF
 
 echo $(bitcoin-cli --version)
