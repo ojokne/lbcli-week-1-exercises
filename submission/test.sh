@@ -47,7 +47,7 @@ echo "-----------------------------------------"
 echo "Check your wallet balance to see what resources you have to start"
 # STUDENT TASK: Get the balance of btrustwallet
 # WRITE YOUR SOLUTION BELOW:
-BALANCE=$(bitcoin-cli -rpcwallet=btrustwallet  getbalance)
+BALANCE=$(bitcoin-cli -regtest -rpcwallet=btrustwallet  getbalance)
 check_cmd "Balance check"
 echo "Your starting balance: $BALANCE BTC"
 
